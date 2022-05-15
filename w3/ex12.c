@@ -1,0 +1,11 @@
+#include <stdio.h>
+#include <string.h>
+
+void main() {
+    char* y = malloc(sizeof(char) * 10);
+    printf("enter a string\n");
+    scanf("%s", y);     // error  becuase y has no space for a string
+    printf("you entered %s\n", y);
+
+}
+
