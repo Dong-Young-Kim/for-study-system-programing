@@ -31,9 +31,15 @@ void main(){
        		}
 
        		x=fork(); 
-       		if (x==0){ 
-           		//printf("I am child to execute %s\n", buf); 
-           		y=execve(argv[0], argv, envp); 
+       		if (x==0){
+			int k;
+			for(k=0;k<7;k++){
+				char tmp[50];
+				sprintf(tmp,"%s/%s",envp[k],argv[0]);
+				//printf("%s\n",tmp);
+           			y=execve(tmp, argv, 0); 
+			
+			}
            		if (y<0){
               			perror("exec failed"); 
               			exit(1); 
